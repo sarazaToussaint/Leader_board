@@ -16,21 +16,15 @@
             <h1>Leader Board</h1>
             <div class="scores-header">
                 <h2>Recent Scores</h2>
-                <button type="button" class="refresh">Refresh</button>
+                <button id="refresh" type="submit" class="refresh">Refresh</button>
             </div>
-            <div class="scores-container">
-                <p>Name: 100</p>
-                <p class="row-bg">Name: 60</p>
-                <p>Name: 34</p>
-                <p class="row-bg">Name: 50</p>
-                <p>Name: 42</p>
-            </div>
+            <div id="scores" class="scores-container"></div>
         </div>
         <div class="AddScore">
             <h2>Add your Score</h2>
             <form class="form">
-                <input type="text" placeholder="Your name" class="name" required><br/>
-                <input type="text" placeholder="Your score" class="author" required><br/>
+                <input type="text" name="name" placeholder="Your name" class="name" required><br/>
+                <input type="number" name="score" placeholder="Your score" class="author" required><br/>
                 <button type="submit" class="add">submit</button>
             </form>
         </div>
