@@ -4,7 +4,7 @@
 
 ## description: 
 
-> - A Leaderboard app that allows players to add their score, and see other players scores.
+> - A Leaderboard app that allows players to add their score, and see other player scores.
 
 > in this project:
 - Set up the linters for html, css, and JavaScript.
