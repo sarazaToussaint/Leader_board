@@ -10,16 +10,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n\n\n//# sourceURL=webpack://leader_board/./src/index.js?");
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/main.css":
 /*!*******************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/main.css ***!
@@ -117,6 +107,26 @@ eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj
 /***/ ((module) => {
 
 eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\n\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://leader_board/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _modules_users_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/users.js */ \"./src/modules/users.js\");\n\n\n\nconst newUserScore = new _modules_users_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\nconst form = document.querySelector('.form');\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n  const user = form.name.value;\n  const score = form.score.value;\n  newUserScore.addNewScore({ user, score });\n  form.name.value = '';\n  form.score.value = '';\n});\n\nconst scoresList = () => {\n  newUserScore.playersData = [];\n  newUserScore.fetchData();\n};\n\nconst refersh = document.getElementById('refresh');\nrefersh.addEventListener('click', scoresList);\nwindow.addEventListener('DOMContentLoaded', newUserScore.getData);\n\n\n//# sourceURL=webpack://leader_board/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/users.js":
+/*!******************************!*\
+  !*** ./src/modules/users.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass UserScore {\n  constructor(user, score) {\n    this.user = user;\n    this.score = score;\n  }\n\n      data = [];\n\n      url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/SYUPN8SrKEHVkE2VEm7J/scores/';\n\n      getData = () => {\n        const scores = document.getElementById('scores');\n        scores.innerHTML = this.data.map((elem, index) => `<p class=${index % 2 !== 0 ? 'row-bg' : ''} >${elem.user}: <span>${elem.score}</span></p>`).join('');\n      }\n\n      fetchData = async () => {\n        try {\n          const data = await fetch(this.url);\n          const response = await data.json();\n\n          response.result.map((elem) => this.data.push(elem));\n          return this.getData();\n        } catch (error) {\n          return error;\n        }\n      };\n\n      addNewScore = async ({ user, score }) => {\n        try {\n          const record = {\n            method: 'POST',\n            headers: {\n              Accept: 'application/json',\n              'Content-Type': 'application/json',\n            },\n            body: JSON.stringify({ user, score }),\n          };\n\n          const data = await fetch(this.url, record);\n          const response = await data.json();\n          this.scoreData.push(response);\n          return this.fetchData();\n        } catch (error) {\n          return error;\n        }\n      }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserScore);\n\n//# sourceURL=webpack://leader_board/./src/modules/users.js?");
 
 /***/ })
 

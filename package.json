@@ -1,7 +1,7 @@
 {
   "name": "leader_board",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -19,10 +19,7 @@
   },
   "homepage": "https://github.com/sarazaToussaint/Leader_board#readme",
   "devDependencies": {
-    "@babel/core": "^7.17.12",
-    "@babel/preset-env": "^7.17.12",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
