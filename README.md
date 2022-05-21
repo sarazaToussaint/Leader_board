@@ -58,7 +58,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Author
 
-👤 **Ibrahim Ahmat**
+👤 **Toussaint Saraza**
 
 - GitHub: [@sarazaToussaint](https://github.com/sarazaToussaint)
 - Twitter: [@ToussaintSaraz1](https://twitter.com/ToussaintSaraz1)
