@@ -1,14 +1,23 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  margin: 100px auto;
+  width: fit-content;
+  margin: 30px auto;
+  background-color: #6e0e0a;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
+  color: #fff;
+  margin: 10px 0 0 0;
 }
 
 .container {
@@ -23,67 +32,105 @@ body {
   margin: 0 25px;
 }
 
-.content h1 {
-  font-size: 48px;
-  font-weight: 600;
-  margin: 0 0 0 -25px;
-}
-
 .scores-header {
   display: flex;
   flex-direction: row;
-  margin: 50px 0 20px 0;
+  margin: 35px 0 20px 0;
   justify-content: space-between;
+}
+
+.scores-container {
+  overflow: auto;
+  border-spacing: 15px;
+  height: 350px;
+  background-color: #f0f0c9;
+  border: 3px solid #000;
+  border-radius: 10px;
+}
+
+.scores-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scores-container::-webkit-scrollbar-track {
+  margin: 0 0 0 2px;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 20px;
+}
+
+.scores-container::-webkit-scrollbar-thumb {
+  background: #d74e09;
+  border-radius: 20px;
+}
+
+.scores-container::-webkit-scrollbar-thumb:hover {
+  background: #d74e09b4;
 }
 
 .scores-header > h2 {
   font-size: 30px;
+  color: rgba(73, 169, 224, 0.867);
 }
 
-.scores-container {
-  border: 3px solid black;
-}
-
-.scores-container > p {
+.scores-container > p,
+span {
+  font-family: monospace;
   font-size: 20px;
   font-weight: 500;
   padding: 5px;
 }
 
 button {
+  color: #000;
   border: 2px solid #000;
+  border-radius: 8px;
   box-shadow: 2px 2px 2px #000;
-  background-color: #fff;
+  background-color: #f0f0c9;
   font-size: 16px;
   font-weight: 600;
   padding: 2px;
   margin: 10px 0 0 0;
 }
 
+button:hover {
+  background-color: rgba(73, 169, 224, 0.867);
+  color: #fff;
+  transform: scale(1.2, 1.2);
+}
+
 .row-bg {
-  background-color: #d7e3ffad;
+  background-color: rgba(73, 169, 224, 0.867);
 }
 
 .AddScore {
-  margin: 110px 0 0 100px;
-  width: 300px;
+  margin: 154px 100px;
+  padding: 15px;
+  width: fit-content;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 2px solid #6e0e0a;
+  box-shadow: 2px 2px 2px #000;
 }
 
 .AddScore > h2 {
   font-size: 30px;
+  color: rgba(73, 169, 224, 0.867);
   margin: 0 0 15px 0;
 }
 
 input {
   width: auto;
+  font-family: monospace;
   font-size: 18px;
   font-weight: 500;
+  color: #6e0e0a;
   margin: 5px auto;
-  padding: 2px;
-  border: 2px solid #000;
+  padding: 5px;
+  border: 2px solid #6e0e0a;
+  border-radius: 8px;
   box-shadow: 2px 2px 2px #000;
 }
 
 input::placeholder {
-  color: #000;
+  color: #6e0e0a;
 }
